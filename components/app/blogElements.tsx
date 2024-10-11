@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { StickyNoteIcon, MoveUpRightIcon } from "lucide-react";
+import { MoveUpRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const blogPosts = [
