@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { MoveLeftIcon } from "lucide-react";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   const router = useRouter();
 
   return (
