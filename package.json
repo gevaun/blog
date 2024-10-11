@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.11.7",
     "lucide-react": "^0.451.0",
     "next": "14.2.15",
+    "npm": "^10.9.0",
     "pnpm": "^9.12.1",
     "react": "^18",
     "react-dom": "^18"
