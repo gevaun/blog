@@ -1,42 +1,120 @@
 "use client";
 
 import Link from "next/link";
-import { MoveUpRightIcon } from "lucide-react";
+import { DotIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-const blogPosts = [
+
+const blogs = [
   {
     id: 1,
-    title: "The Art of Coding: A Journey Through Time",
+    title: "Navigating the World of AI: A Beginner's Guide",
     excerpt:
-      "Explore the evolution of coding from its early days to the present, and get a glimpse into the future of programming.",
-    date: "May 15, 2023",
-    readTime: "5 min read",
-    category: "Programming",
+      "Discover the fundamentals of artificial intelligence, from machine learning to neural networks.",
+    date: "October 12, 2024",
+    readTime: "10 min read",
+    category: "Technology",
     image: "/placeholder.svg?height=200&width=300",
-    tags: ["JavaScript", "Python", "C++"],
+    tags: ["AI", "Machine Learning", "Neural Networks"],
   },
   {
     id: 2,
-    title: "Machine Learning: Demystifying AI",
+    title: "The Future of Work: Automation and the Workforce",
     excerpt:
-      "Dive into the world of machine learning and understand the basics of how AI systems learn and make decisions.",
-    date: "May 10, 2023",
-    readTime: "7 min read",
-    category: "Artificial Intelligence",
+      "Explore the impact of automation on jobs and industries, and discuss strategies for adapting to the changing workplace.",
+    date: "October 10, 2024",
+    readTime: "8 min read",
+    category: "Business",
     image: "/placeholder.svg?height=200&width=300",
-    tags: ["Machine Learning", "Deep Learning", "Neural Networks"],
+    tags: ["Automation", "Future of Work", "Job Market"],
   },
   {
     id: 3,
-    title: "The Future of Web Development",
+    title: "Ethical Considerations in AI Development",
     excerpt:
-      "Discover the latest trends and technologies shaping the future of web development, from serverless to edge computing.",
-    date: "May 5, 2023",
-    readTime: "6 min read",
-    category: "Web Development",
+      "Examine the ethical implications of AI, including bias, privacy, and accountability.",
+    date: "October 9, 2024",
+    readTime: "12 min read",
+    category: "Technology",
     image: "/placeholder.svg?height=200&width=300",
-    tags: ["React", "Node.js", "GraphQL"],
+    tags: ["AI Ethics", "Bias", "Privacy"],
+  },
+  {
+    id: 4,
+    title: "The Rise of Renewable Energy: A Sustainable Future",
+    excerpt:
+      "Learn about the growing importance of renewable energy sources and their potential to combat climate change.",
+    date: "October 8, 2024",
+    readTime: "9 min read",
+    category: "Environment",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Renewable Energy", "Climate Change", "Sustainability"],
+  },
+  {
+    id: 5,
+    title: "The Psychology of Color: How Colors Affect Our Emotions",
+    excerpt:
+      "Discover the science behind color psychology and how different colors can influence our mood and behavior.",
+    date: "October 7, 2024",
+    readTime: "7 min read",
+    category: "Psychology",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Color Psychology", "Emotions", "Marketing"],
+  },
+  {
+    id: 6,
+    title: "The Power of Mindfulness: Techniques for Stress Reduction",
+    excerpt:
+      "Explore mindfulness meditation and other techniques to reduce stress and improve mental well-being.",
+    date: "October 6, 2024",
+    readTime: "11 min read",
+    category: "Health and Wellness",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Mindfulness", "Stress Reduction", "Meditation"],
+  },
+  {
+    id: 7,
+    title: "The Art of Effective Communication: Tips for Building Strong Relationships",
+    excerpt:
+      "Learn essential communication skills to improve your relationships with others, both personally and professionally.",
+    date: "October 5, 2024",
+    readTime: "13 min read",
+    category: "Personal Development",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Communication", "Relationships", "Interpersonal Skills"],
+  },
+  {
+    id: 8,
+    title: "The Future of Travel: Sustainable Tourism and Eco-Friendly Destinations",
+    excerpt:
+      "Discover the growing trend of sustainable tourism and explore eco-friendly travel destinations.",
+    date: "October 4, 2024",
+    readTime: "10 min read",
+    category: "Travel",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Sustainable Tourism", "Eco-Friendly Travel", "Adventure"],
+  },
+  {
+    id: 9,
+    title: "The Importance of Diversity and Inclusion in the Workplace",
+    excerpt:
+      "Explore the benefits of a diverse and inclusive workplace and strategies for fostering a more equitable environment.",
+    date: "October 3, 2024",
+    readTime: "12 min read",
+    category: "Business",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Diversity", "Inclusion", "Workplace Culture"],
+  },
+  {
+    id: 10,
+    title: "The Science of Happiness: Proven Strategies for a Fulfilling Life",
+    excerpt:
+      "Discover research-backed strategies to increase happiness and well-being.",
+    date: "October 2, 2024",
+    readTime: "8 min read",
+    category: "Psychology",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Happiness", "Well-being", "Positive Psychology"],
   },
 ];
 
@@ -65,13 +143,13 @@ const container = {
     scale: 1,
     transition: {
       delayChildren: 0.3,
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const item = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { y: 0.5, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
@@ -79,7 +157,7 @@ const item = {
 };
 
 export default function BlogList() {
-  const blogList = blogPosts.map((post) => (
+  const blogList = blogs.map((post) => (
     <Link
       href={`blog/${post.id}`}
       className="opacity-85 hover:opacity-100 group"
@@ -88,7 +166,7 @@ export default function BlogList() {
         <div key={post.id} className="flex items-center gap-2 font-extralight">
           <span>{post.date}</span>
           <span>{post.title}</span>
-          <MoveUpRightIcon className="w-3 h-3 transition-all duration-200 group-hover:rotate-45 opacity-50 group-hover:opacity-75" />
+          <DotIcon className="w-3 h-3 transition-all duration-200 opacity-0 group-hover:opacity-75 group-hover:animate-ping" />
         </div>
       </motion.li>
     </Link>
