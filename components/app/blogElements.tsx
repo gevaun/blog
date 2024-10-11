@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { StickyNoteIcon, MoveUpRightIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 const blogPosts = [
   {
@@ -56,17 +59,50 @@ const tags = [
   "Cloud Computing",
 ];
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 export default function BlogList() {
   const blogList = blogPosts.map((post) => (
-    <Link href={`blog/${post.id}`} className="opacity-75 hover:opacity-100 group">
-      <div key={post.id} className="flex items-center gap-2">
-        <StickyNoteIcon className="w-3 h-3" />
-        {post.title}
-        {post.date}
-        <MoveUpRightIcon className="w-3 h-3 transition-all duration-200 group-hover:rotate-45 opacity-50 group-hover:opacity-75" />
-      </div>
+    <Link
+      href={`blog/${post.id}`}
+      className="opacity-85 hover:opacity-100 group"
+    >
+      <motion.li key={post.id} className="item" variants={item}>
+        <div key={post.id} className="flex items-center gap-2 font-extralight">
+          <span>{post.date}</span>
+          <span>{post.title}</span>
+          <MoveUpRightIcon className="w-3 h-3 transition-all duration-200 group-hover:rotate-45 opacity-50 group-hover:opacity-75" />
+        </div>
+      </motion.li>
     </Link>
   ));
 
-  return <div className="gap-6 grid">{blogList}</div>;
+  return (
+    <motion.ul
+      className="container grid gap-4"
+      variants={container}
+      initial="hidden"
+      animate="visible"
+    >
+      {blogList}
+    </motion.ul>
+  );
 }
