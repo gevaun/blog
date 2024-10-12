@@ -2,9 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { SunIcon, MoonStarIcon, MonitorIcon } from "lucide-react";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { SunIcon, MoonStarIcon, MonitorIcon, MessageSquareDotIcon, MessageCircleMoreIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button"
@@ -18,32 +16,11 @@ import {
 export default function navigation() {
   const { setTheme } = useTheme();
 
-  const themeIconStyle =
-    "w-4 h-4 duration-400 ease-in-out transition dark:hover:stroke-white";
- 
-  //   const themeIcon = theme ? (
-  //   <SunIcon
-  //     className={themeIconStyle}
-  //     onClick={() => {
-  //       setTheme("light")
-  //       setThemeState("light");
-  //     }}
-  //   />
-  // ) : (
-  //   <MoonStarIcon
-  //     className={`${themeIconStyle}`}
-  //     onClick={() => {
-  //       setTheme("dark")
-  //       setThemeState("dark");
-  //     }}
-  //   />
-  // );
-
   return (
     <nav className="flex justify-between items-center p-4">
       <div className="flex items-center gap-4">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
-          Blog.
+        <Link href="/" className="text-xl font-bold tracking-tighter flex items-center">
+          <MessageSquareDotIcon className="scale-x scale-x-[-1] h-5"/> Blog.
         </Link>
       </div>
       <div className="flex items-center gap-4">
