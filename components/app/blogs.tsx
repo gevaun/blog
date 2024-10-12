@@ -166,7 +166,7 @@ export default function BlogList() {
       <motion.li key={post.id} className="item" variants={item}>
         <div
           key={post.id}
-          className="flex w-fit items-center gap-2 font-extralight group-hover:underline underline-offset-8 decoration-zinc-500/30 transition duration-500 ease-in-out"
+          className="flex w-fit items-center gap-2 font-extralight group-hover:underline underline-offset-8 decoration-zinc-500 transition duration-500 ease-in-out"
         >
           <span>{post.date}</span>
           <span>{post.title}</span>
