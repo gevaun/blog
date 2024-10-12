@@ -160,6 +160,7 @@ const item = {
 export default function BlogList() {
   const blogList = blogs.map((post) => (
     <Link
+      key={post.id}
       href={`blog/${post.id}`}
       className="opacity-85 hover:opacity-100 group"
     >
