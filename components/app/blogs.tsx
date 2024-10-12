@@ -4,7 +4,6 @@ import Link from "next/link";
 import { DotIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-
 const blogs = [
   {
     id: 1,
@@ -74,7 +73,8 @@ const blogs = [
   },
   {
     id: 7,
-    title: "The Art of Effective Communication: Tips for Building Strong Relationships",
+    title:
+      "The Art of Effective Communication: Tips for Building Strong Relationships",
     excerpt:
       "Learn essential communication skills to improve your relationships with others, both personally and professionally.",
     date: "October 5, 2024",
@@ -85,7 +85,8 @@ const blogs = [
   },
   {
     id: 8,
-    title: "The Future of Travel: Sustainable Tourism and Eco-Friendly Destinations",
+    title:
+      "The Future of Travel: Sustainable Tourism and Eco-Friendly Destinations",
     excerpt:
       "Discover the growing trend of sustainable tourism and explore eco-friendly travel destinations.",
     date: "October 4, 2024",
@@ -163,10 +164,13 @@ export default function BlogList() {
       className="opacity-85 hover:opacity-100 group"
     >
       <motion.li key={post.id} className="item" variants={item}>
-        <div key={post.id} className="flex w-fit items-center gap-2 font-extralight group-hover:underline underline-offset-8 underline- transition duration-500 ease-in-out">
+        <div
+          key={post.id}
+          className="flex w-fit items-center gap-2 font-extralight group-hover:underline underline-offset-8 underline- transition duration-500 ease-in-out"
+        >
           <span>{post.date}</span>
           <span>{post.title}</span>
-          <DotIcon className="w-3 h-3 transition-all duration-200 opacity-0 group-hover:opacity-75 group-hover:animate-ping" />
+          <DotIcon className="w-3 h-3 transition-all duration-500 opacity-0 group-hover:opacity-75 group-hover:animate-ping" />
         </div>
       </motion.li>
     </Link>

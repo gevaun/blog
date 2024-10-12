@@ -1,6 +1,6 @@
 "use client";
 
-import BlogElements from "@/components/app/blogElements";
+import BlogElements from "@/components/app/blogs";
 import { motion } from "framer-motion";
 
 export default function Home() {
