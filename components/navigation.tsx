@@ -20,7 +20,7 @@ export default function navigation() {
     <nav className="flex justify-between items-center p-4">
       <div className="flex items-center gap-4">
         <Link href="/" className="text-xl font-bold tracking-tighter flex items-center">
-          <MessageSquareDotIcon className="scale-x scale-x-[-1] h-5"/> Blog.
+          Blog.
         </Link>
       </div>
       <div className="flex items-center gap-4">
