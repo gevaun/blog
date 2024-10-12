@@ -163,7 +163,7 @@ export default function BlogList() {
       className="opacity-85 hover:opacity-100 group"
     >
       <motion.li key={post.id} className="item" variants={item}>
-        <div key={post.id} className="flex items-center gap-2 font-extralight">
+        <div key={post.id} className="flex w-fit items-center gap-2 font-extralight group-hover:underline underline-offset-8 underline- transition duration-500 ease-in-out">
           <span>{post.date}</span>
           <span>{post.title}</span>
           <DotIcon className="w-3 h-3 transition-all duration-200 opacity-0 group-hover:opacity-75 group-hover:animate-ping" />
