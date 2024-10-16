@@ -4,6 +4,8 @@ import "./globals.css";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
+import { Roboto_Mono, } from "@next/font/google";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,6 +17,11 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${robotoMono.className} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
@@ -39,9 +46,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex flex-auto flex-col">
-          <Navigation />
-          <div className="mt-20 mx-auto container ">{children}</div>
-          <Footer />
+            <Navigation />
+            <div className="mt-20 mx-auto container ">{children}</div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
