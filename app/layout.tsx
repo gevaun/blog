@@ -4,8 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
-import { Roboto_Mono, } from "@next/font/google";
-
+import { Roboto_Mono } from "@next/font/google";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
