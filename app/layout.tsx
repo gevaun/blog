@@ -46,7 +46,7 @@ export default function RootLayout({
         >
           <div className="flex flex-auto flex-col">
             <Navigation />
-            <div className="mt-20 mx-auto container transition-all duration-300 ease-in-out ">{children}</div>
+            <div className="mt-20 mx-auto container transition-all duration-300 ease-in-out p-2">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>
