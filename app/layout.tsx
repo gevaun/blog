@@ -4,7 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
-import { Roboto_Mono } from "@next/font/google";
+import { Roboto_Mono } from "next/font/google";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -46,7 +46,7 @@ export default function RootLayout({
         >
           <div className="flex flex-auto flex-col">
             <Navigation />
-            <div className="mt-20 mx-auto container ">{children}</div>
+            <div className="mt-20 mx-auto container transition-all duration-300 ease-in-out ">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>
