@@ -1,4 +1,3 @@
-// import Link from "next/link";
 import { getBlogPosts } from "../utils/utils";
 import Link from "next/link";
 
@@ -10,8 +9,12 @@ export default function BlogPosts() {
       {allBlogs.map((blog) => (
         <div key={blog.slug}>
           <Link href={`/blog/${blog.slug}`}>
-            <h2>{blog.title}</h2>
-            <p>{blog.date}</p>
+            <p className="flex gap-2">
+              <span className="opacity-75">
+                {blog.date}
+                </span>
+              {blog.title}
+            </p>
           </Link>
         </div>
       ))}
