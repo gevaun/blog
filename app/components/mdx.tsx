@@ -116,11 +116,7 @@ const components = {
 //   Table,
 }
 
-import { MDXRemoteProps } from 'next-mdx-remote/rsc';
-
-interface CustomMDXProps extends MDXRemoteProps {}
-
-export function CustomMDX(props: CustomMDXProps) {
+export function CustomMDX(props) {
     return (
         <MDXRemote
             {...props}
