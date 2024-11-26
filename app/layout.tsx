@@ -6,18 +6,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { Roboto_Mono } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -31,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;                                                                                  
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -46,7 +34,9 @@ export default function RootLayout({
         >
           <div className="flex flex-auto flex-col">
             <Navigation />
-            <div className="mt-20 mx-auto container transition-all duration-300 ease-in-out p-2">{children}</div>
+            <div className="mt-20 mx-auto container transition-all duration-300 ease-in-out p-2">
+              {children}
+            </div>
             <Footer />
           </div>
         </ThemeProvider>

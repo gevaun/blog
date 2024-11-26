@@ -2,7 +2,7 @@ import { getBlogPosts } from "../utils/utils";
 import Link from "next/link";
 
 export default function BlogPosts() {
-  let allBlogs = getBlogPosts();
+  const allBlogs = getBlogPosts();
 
   return (
     <div>

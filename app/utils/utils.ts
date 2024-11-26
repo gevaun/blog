@@ -2,13 +2,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-type Metadata = {
-  title: string;
-  publishedAt: string;
-  summary: string;
-  image?: string;
-};
-
 // Get the blog posts from the file system
 export function getBlogPosts() {
   const blogsPath = path.join(process.cwd(), "app", "blog", "posts");

@@ -1,10 +1,8 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { SunIcon, MoonStarIcon, MonitorIcon, MessageSquareDotIcon, MessageCircleMoreIcon } from "lucide-react";
+import { SunIcon, MoonStarIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
