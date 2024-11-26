@@ -4,7 +4,7 @@ import { getBlogPosts } from "@/app/utils/utils";
 import Link from "next/link";
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts();
+  const posts = getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -22,7 +22,7 @@ type BlogProps = {
 
 export default async function Blog(props: BlogProps) {
   const params = await props.params;
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
