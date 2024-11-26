@@ -75,4 +75,13 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
