@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/app/components/mdx";
 import { getBlogPosts } from "@/app/utils/utils";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -41,9 +42,9 @@ export default async function Blog(props: BlogProps) {
           }),
         }}
       />
-    <a href="/" className="text-blue-500 hover:underline">
+      <Link href="/" className="text-blue-500 hover:underline">
         &larr; Back to Blogs
-    </a>
+      </Link>
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.title}
       </h1>
