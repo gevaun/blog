@@ -11,7 +11,7 @@ type Metadata = {
 
 // Get the blog posts from the file system
 export function getBlogPosts() {
-  const blogsPath = path.join(process.cwd(), "app", "blog");
+  const blogsPath = path.join(process.cwd(), "app", "blog", "posts");
 
   const blogFiles = fs.readdirSync(blogsPath);
   const mdxFiles = blogFiles.filter((file: string) => file.endsWith(".mdx"));
